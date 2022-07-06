@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Dice Roller</string>
-    <string name="roll">Roll</string>
+    <string name="app_name">Tira Dados</string>
+    <string name="roll">Presiona para lanzar el dadao</string>
 </resources>
