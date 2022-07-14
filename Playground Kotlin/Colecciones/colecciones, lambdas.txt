@@ -1,0 +1,55 @@
+fun main() {
+    val peopleAges = mutableMapOf<String, Int>(
+        "Fred" to 30,
+        "Ann" to 23
+    )
+    println(peopleAges)
+    
+    peopleAges.put("Barbara", 42)
+     println(peopleAges)
+     
+     peopleAges["Joe"]= 41
+     println(peopleAges)
+     peopleAges["Fred"] = 31
+    println(peopleAges)
+    
+    peopleAges.forEach{print("${it.key} is ${it.value}, ")}
+    println("")
+    println(peopleAges.map {"${it.key} is ${it.value}"}.joinToString(", "))
+    
+    val filteredNames = peopleAges.filter { it.key.length < 4}
+    println(filteredNames)
+    
+    //////////////Lambdas///////////////////
+    val number : Int = 5
+    val triple : (Int)-> Int = {a: Int -> a*3}
+    println(triple(5))
+      val triples : (Double)-> Double = {it*3}
+      println(triples(15.0))
+      
+      val mayus: (String) -> String = { it.uppercase()}
+      println(mayus("hola"))
+      ///////////////////Link////////////////
+      //https://play.kotlinlang.org/byExample/04_functional/02_Lambdas
+      
+      /////////////////SortedWith/////////////////////////////////////      
+     
+      val peopleNames = listOf("Fred", "Ann", "Barbara", "Joe")
+    println(peopleNames.sorted())
+    println(peopleNames.sortedWith { str1:String, str2:String ->str1.length-str2.length})
+    println(peopleNames.sortedWith { str1:String, str2:String ->str2.length-str1.length})
+    
+    ////////////////////777Listas de Palabras//////////////
+    
+     val words = listOf("about", "acute", "awesome", "balloon", "best", "brief", "class", "coffee", "creative")
+     val filteredWords = words.filter { it.startsWith("b", ignoreCase = true)}
+        .shuffled()
+        .take(2)
+        .sorted()
+     println(filteredWords)
+    
+    
+    
+    
+     
+}
